@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: niipm-api
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/niipm}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:root}
+  flyway:
+    locations: classpath:db/migration
+
+server:
+  port: 8081
+
+niipm:
+  default-actor-id: 1
+  cors:
+    allowed-origins: ${CORS_ORIGINS:http://localhost:8081}
